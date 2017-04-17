@@ -11,7 +11,7 @@ export default class FeedItem extends React.Component {
   }
 
   handleCommentPost(commentText) {
-    postComment(this.state._id, 4, commentText, (updatedFeedItem) => {
+    postComment(this.state._id, "000000000000000000000004", commentText, (updatedFeedItem) => {
       this.setState(updatedFeedItem);
     });
   }
@@ -32,10 +32,10 @@ export default class FeedItem extends React.Component {
 
       if (this.didUserLike()) {
         // User clicked 'unlike' button.
-        unlikeFeedItem(this.state._id, 4, callbackFunction);
+        unlikeFeedItem(this.state._id, "000000000000000000000004", callbackFunction);
       } else {
         // User clicked 'like' button.
-        likeFeedItem(this.state._id, 4, callbackFunction);
+        likeFeedItem(this.state._id, "000000000000000000000004", callbackFunction);
       }
     }
   }
@@ -63,9 +63,9 @@ export default class FeedItem extends React.Component {
       this.setState({comments: comments});
     };
     if (isLike) {
-      likeComment(this.state._id, id, 4, cb);
+      likeComment(this.state._id, id, "000000000000000000000004", cb);
     } else {
-      unlikeComment(this.state._id, id, 4, cb);
+      unlikeComment(this.state._id, id, "000000000000000000000004", cb);
     }
   }
 
